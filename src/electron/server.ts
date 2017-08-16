@@ -1,10 +1,9 @@
 import * as express from 'express';
 import * as path from 'path';
-
+import { PessoaProvider } from './provider';
+import { pessoaRouter } from './routes';
 export const server = express();
 
-server.get('/api/hello-world', (request, response) =>
-  response.status(200).json({ message: 'Hello World' })
-);
+server.use('/api/pessoas', pessoaRouter);
 
 server.all('*', express.static(__dirname));

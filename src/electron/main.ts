@@ -4,14 +4,14 @@ import { app, BrowserWindow } from 'electron';
 let win;
 
 function createWindow() {
-  win = new BrowserWindow({ width: 800, height: 600 });
+  win = new BrowserWindow({ width: 1024, height: 768 });
 
   // and load the index.html of the app.
   // win.loadURL(`file://${__dirname}/index.html`);
   win.loadURL(`http://localhost:3000/`);
 
   // Open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {

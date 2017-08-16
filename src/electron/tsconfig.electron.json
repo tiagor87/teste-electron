@@ -4,6 +4,7 @@
     "outDir": "../../dist",
     "baseUrl": "./",
     "module": "commonjs",
-    "types": []
+    "types": [],
+    "target": "es5"
   }
 }

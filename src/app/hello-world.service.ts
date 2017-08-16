@@ -7,6 +7,6 @@ export class HelloWorldService {
   constructor(private http: Http) {}
 
   public getHelloWorld() {
-    return this.http.get('/api/hello-world').map(response => response.json());
+    return this.http.get('/api/pessoas').map(response => response.json());
   }
 }

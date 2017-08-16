@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public response: any;
+  public pessoas: any;
   constructor(private helloWorldService: HelloWorldService) {}
 
   ngOnInit(): void {
     this.helloWorldService.getHelloWorld().subscribe(data => {
-      this.response = data;
+      this.pessoas = data;
     });
   }
 }
