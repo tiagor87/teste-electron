@@ -1,4 +1,3 @@
-import { HelloWorldService } from './hello-world.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,12 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public pessoas: any;
-  constructor(private helloWorldService: HelloWorldService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.helloWorldService.getHelloWorld().subscribe(data => {
-      this.pessoas = data;
-    });
-  }
+  ngOnInit(): void {}
 }
