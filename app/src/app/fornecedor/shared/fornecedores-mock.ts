@@ -1,4 +1,4 @@
-import { Fornecedor } from './fornecedor';
+import { Fornecedor } from './fornecedor.model';
 export class FornecedoresMock {
   private static fornecedores: Fornecedor[] = [
     {

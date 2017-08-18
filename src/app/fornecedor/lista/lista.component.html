@@ -1,9 +1,0 @@
-<ul class="list-group">
-  <li class="list-group-item" routerLink="/fornecedor" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
-    <span>Novo</span>
-  </li>
-  <li class="list-group-item" [routerLink]="['/fornecedor', fornecedor.IdPessoa]" [routerLinkActive]="'active'" *ngFor="let fornecedor of fornecedores">
-    <span>{{ fornecedor.NmPessoa }}</span>
-    <small>{{fornecedor.CdPessoa}}</small>
-  </li>
-</ul>

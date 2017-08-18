@@ -1,9 +1,8 @@
-import { NovoComponent } from './novo/novo.component';
-import { ListaComponent } from './lista/lista.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FornecedorComponent } from './fornecedor.component';
-import { EdicaoComponent } from './edicao/edicao.component';
+import { FornecedorListaComponent } from './fornecedor-lista/fornecedor-lista.component';
+import { FornecedorCadastroComponent } from './fornecedor-cadastro/fornecedor-cadastro.component';
 
 const routes: Routes = [
   {
@@ -12,11 +11,15 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: NovoComponent
+        component: FornecedorListaComponent
       },
       {
-        path: ':id',
-        component: EdicaoComponent
+        path: 'cadastro',
+        component: FornecedorCadastroComponent
+      },
+      {
+        path: 'cadastro/:id',
+        component: FornecedorCadastroComponent
       }
     ]
   }
