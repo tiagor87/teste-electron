@@ -1,18 +1,8 @@
 import { Fornecedor } from './../shared/fornecedor.model';
-import {
-  Component,
-  OnInit,
-  Input,
-  ElementRef,
-  ViewChild,
-  Renderer2,
-  Renderer
-} from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';
 import { FornecedorService } from '../shared/fornecedor.service';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
 import { Endereco } from '../../endereco/shared/endereco.model';
 import { ModalButtonComponent } from '../../shared/modal/modal-button/modal-button.component';
 
@@ -30,8 +20,7 @@ export class FornecedorCadastroComponent implements OnInit {
   public filtroForm: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private fornecedorService: FornecedorService,
-    private renderer: Renderer
+    private fornecedorService: FornecedorService
   ) {
     this.inicializarCadastroForm();
     this.inicializarFiltroForm();
