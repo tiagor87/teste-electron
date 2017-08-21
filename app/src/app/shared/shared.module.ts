@@ -6,6 +6,8 @@ import { ModalBodyComponent } from './modal/modal-body/modal-body.component';
 import { ModalHeaderComponent } from './modal/modal-header/modal-header.component';
 import { ModalButtonComponent } from './modal/modal-button/modal-button.component';
 import { ModalCloseButtonComponent } from './modal/modal-close-button/modal-close-button.component';
+import { AutoFocusDirective } from './auto-focus.directive';
+import { ModalEventsDirective } from './modal/modal-events.directive';
 
 @NgModule({
   imports: [CommonModule],
@@ -15,7 +17,9 @@ import { ModalCloseButtonComponent } from './modal/modal-close-button/modal-clos
     ModalBodyComponent,
     ModalHeaderComponent,
     ModalButtonComponent,
-    ModalCloseButtonComponent
+    ModalCloseButtonComponent,
+    AutoFocusDirective,
+    ModalEventsDirective
   ],
   exports: [
     ModalComponent,
@@ -23,7 +27,8 @@ import { ModalCloseButtonComponent } from './modal/modal-close-button/modal-clos
     ModalBodyComponent,
     ModalHeaderComponent,
     ModalButtonComponent,
-    ModalCloseButtonComponent
+    ModalCloseButtonComponent,
+    AutoFocusDirective
   ]
 })
 export class SharedModule {}

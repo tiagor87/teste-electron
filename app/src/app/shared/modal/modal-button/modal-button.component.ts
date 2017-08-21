@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  HostBinding,
+  ElementRef,
+  ViewChild
+} from '@angular/core';
 
 @Component({
   selector: 'alt-modal-button',
@@ -6,8 +13,13 @@ import { Component, OnInit, Input, HostBinding } from '@angular/core';
   styleUrls: ['./modal-button.component.scss']
 })
 export class ModalButtonComponent implements OnInit {
+  @ViewChild('localizar') private localizarBtn: ElementRef;
   @Input() public target;
   constructor() {}
 
   ngOnInit() {}
+
+  exibirModal() {
+    this.localizarBtn.nativeElement.click();
+  }
 }

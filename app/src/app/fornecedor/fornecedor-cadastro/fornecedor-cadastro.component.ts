@@ -14,6 +14,7 @@ import { FornecedorService } from '../shared/fornecedor.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Endereco } from '../../endereco/shared/endereco.model';
+import { ModalButtonComponent } from '../../shared/modal/modal-button/modal-button.component';
 
 @Component({
   selector: 'alt-fornecedor-cadastro',
@@ -22,7 +23,7 @@ import { Endereco } from '../../endereco/shared/endereco.model';
 })
 export class FornecedorCadastroComponent implements OnInit {
   @ViewChild('codigo') public codigoElement: ElementRef;
-  @ViewChild('localizar') public localizarButton: ElementRef;
+  @ViewChild(ModalButtonComponent) public localizarButton: ModalButtonComponent;
   public fornecedores: Fornecedor[];
   public endereco: Endereco;
   public cadastroForm: FormGroup;
@@ -51,7 +52,7 @@ export class FornecedorCadastroComponent implements OnInit {
   }
 
   public buscar() {
-    this.renderer.invokeElementMethod(this.localizarButton, 'click');
+    this.localizarButton.exibirModal();
   }
 
   public async buscarPorCodigoDeChamada(codigo: string) {

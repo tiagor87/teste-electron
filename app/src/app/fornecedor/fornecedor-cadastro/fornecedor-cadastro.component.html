@@ -4,7 +4,8 @@
       <div class="form-group col-md-2">
         <label for="codigo-pessoa">Código</label>
         <div class="input-group">
-          <input #codigo type="text" class="form-control" formControlName="CdChamada" maxlength="6" (blur)="buscarPorCodigoDeChamada(codigo.value)">
+          <input #codigo type="text" class="form-control" formControlName="CdChamada" maxlength="6" (blur)="buscarPorCodigoDeChamada(codigo.value)"
+            (keyup.F2)="buscar()" altAutoFocus>
           <alt-modal-button class="input-group-btn" target="#modal-consulta-fornecedor"><span class="glyphicon glyphicon-search"></span></alt-modal-button>
         </div>
       </div>
@@ -24,7 +25,7 @@
     <hr>
     <alt-endereco-cadastro [endereco]="endereco" [readonly]="true"></alt-endereco-cadastro>
   </form>
-  <alt-modal modalId="modal-consulta-fornecedor">
+  <alt-modal modalId="modal-consulta-fornecedor" (exibido)="filtro.focus()" (escondido)="codigo.focus()">
     <alt-modal-header>
       <alt-modal-close-button></alt-modal-close-button>
       <h4 class="modal-title">Consulta de fornecedores</h4>
@@ -35,7 +36,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label for="fornecedor-filtro">Filtro de consulta</label>
-              <input type="text" class="form-control" formControlName="Filtro" placeholder="Insira um valor para buscar o fornecedor">
+              <input #filtro type="text" class="form-control" formControlName="Filtro" placeholder="Insira um valor para buscar o fornecedor">
             </div>
           </div>
         </div>
