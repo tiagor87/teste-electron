@@ -1,32 +1,30 @@
-import { FornecedoresMock } from './fornecedores-mock';
+import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Fornecedor } from './fornecedor.model';
+import { Http, URLSearchParams } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class FornecedorService {
-  constructor() {}
+  constructor(private http: Http) {}
 
-  public async obterTodos() {
-    return await FornecedoresMock.obterLista();
+  public obterPorFiltro(texto: string) {
+    const params = new URLSearchParams();
+    params.set('texto', texto);
+    return this.http
+      .get(`${environment.apiUrl}/fornecedor/cqrs`, {
+        search: params
+      })
+      .map(response => response.json())
+      .toPromise();
   }
 
-  public async gravar(fornecedor: Fornecedor) {
-    return !!fornecedor.IdPessoa
-      ? this.atualizar(fornecedor)
-      : this.inserir(fornecedor);
-  }
-
-  private async inserir(fornecedor: Fornecedor) {
-    const fornecedores = await FornecedoresMock.obterLista();
-    fornecedor.IdPessoa = (fornecedores.length + 1).toString();
-    fornecedores.push(fornecedor);
-    return Promise.resolve(fornecedor);
-  }
-
-  private async atualizar(fornecedor: Fornecedor) {
-    const fornecedores = await FornecedoresMock.obterLista();
-    const i = fornecedores.findIndex(f => f.IdPessoa === fornecedor.IdPessoa);
-    fornecedores.splice(i, 1, fornecedor);
-    return Promise.resolve(fornecedor);
+  public obterPorCodigo(codigo: string) {
+    return this.http
+      .get(`${environment.apiUrl}/fornecedor/cqrs/${codigo}`)
+      .map(response => response.json())
+      .toPromise();
   }
 }

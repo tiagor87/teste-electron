@@ -1,3 +1,83 @@
-<p>
-  fornecedor-cadastro works!
-</p>
+<div class="container">
+  <form [formGroup]="cadastroForm">
+    <div class="row">
+      <div class="form-group col-md-2">
+        <label for="codigo-pessoa">Código</label>
+        <div class="input-group">
+          <input #codigo type="text" class="form-control" formControlName="CdChamada" maxlength="6" (blur)="buscarPorCodigoDeChamada(codigo.value)">
+          <alt-modal-button class="input-group-btn" target="#modal-consulta-fornecedor"><span class="glyphicon glyphicon-search"></span></alt-modal-button>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="nome-pessoa">Nome</label>
+        <input type="text" class="form-control" formControlName="NmPessoa" readonly>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="cpf-cnpj-pessoa">CPF / CNPJ</label>
+        <input type="text" class="form-control" formControlName="CdCPF_CGC" readonly>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="telefone">Telefone</label>
+        <input type="text" class="form-control" formControlName="NrTelefone" readonly>
+      </div>
+    </div>
+    <hr>
+    <alt-endereco-cadastro [endereco]="endereco" [readonly]="true"></alt-endereco-cadastro>
+  </form>
+  <alt-modal modalId="modal-consulta-fornecedor">
+    <alt-modal-header>
+      <alt-modal-close-button></alt-modal-close-button>
+      <h4 class="modal-title">Consulta de fornecedores</h4>
+    </alt-modal-header>
+    <alt-modal-body>
+      <form [formGroup]="filtroForm">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="fornecedor-filtro">Filtro de consulta</label>
+              <input type="text" class="form-control" formControlName="Filtro" placeholder="Insira um valor para buscar o fornecedor">
+            </div>
+          </div>
+        </div>
+      </form>
+      <hr>
+      <div class="table-container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Código</th>
+              <th>Nome</th>
+              <th>Logradouro</th>
+              <th>UF</th>
+              <th>Cidade</th>
+              <th>Bairro</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="!!fornecedores?.length; else fornecedorEmptyRow">
+            <tr *ngFor="let f of fornecedores; let i = index" (click)="selecionar(f)" data-dismiss="modal">
+              <td nowrap>{{i + 1}}</td>
+              <td nowrap>{{f.CdChamada}}</td>
+              <td nowrap>{{f.NmPessoa}}</td>
+              <td nowrap>{{f.NmLogradouro}}</td>
+              <td nowrap>{{f.IdUF}}</td>
+              <td nowrap>{{f.NmCidade}}</td>
+              <td nowrap>{{f.NmBairro}}</td>
+            </tr>
+          </tbody>
+          <ng-template #fornecedorEmptyRow>
+            <tr>
+              <td style="text-align: center" colspan="7">
+                Nenhum fornecedor
+              </td>
+            </tr>
+          </ng-template>
+        </table>
+      </div>
+    </alt-modal-body>
+    <alt-modal-footer>
+      <button type="button" data-dismiss="modal" class="btn btn-primary">Fechar</button>
+    </alt-modal-footer>
+  </alt-modal>
+
+</div>

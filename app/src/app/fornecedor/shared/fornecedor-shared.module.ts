@@ -6,7 +6,6 @@ import { FornecedorService } from './fornecedor.service';
 @NgModule({
   imports: [CommonModule, HttpModule],
   providers: [FornecedorService],
-  exports: [FornecedorService],
   declarations: []
 })
 export class FornecedorSharedModule {}

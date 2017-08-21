@@ -1,0 +1,38 @@
+<form [formGroup]="formEndereco">
+  <div class="row">
+    <div class="form-group col-md-2">
+      <label for="codigo-cep">CEP</label>
+      <input type="text" class="form-control" formControlName="CdCEP" [readonly]="readonly">
+    </div>
+    <div formGroupName="Bairro" class="form-group col-md-4">
+      <label for="endereco-bairro">Bairro</label>
+      <input type="text" class="form-control" formControlName="NmBairro" [readonly]="readonly">
+    </div>
+    <div formGroupName="Cidade" class="form-group col-md-4">
+      <label for="endereco-cidade">Cidade</label>
+      <input type="text" class="form-control" formControlName="NmCidade" [readonly]="readonly">
+    </div>
+    <div formGroupName="UF" class="form-group col-md-2">
+      <label for="endereco-uf">UF</label>
+      <input type="text" class="form-control" formControlName="IdUF" [readonly]="readonly">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-1">
+      <label for="endereco-tipo">Tipo</label>
+      <input type="text" class="form-control" formControlName="TpLogradouro" [readonly]="readonly">
+    </div>
+    <div class="form-group col-md-8">
+      <label for="endereco-logradouro">Logradouro</label>
+      <input type="text" class="form-control" formControlName="NmLogradouro" [readonly]="readonly">
+    </div>
+    <div class="form-group col-md-1">
+      <label for="endereco-numero">Número</label>
+      <input type="text" class="form-control" formControlName="NrLogradouro" [readonly]="readonly">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="endereco-complemento">Complemento</label>
+      <input type="text" class="form-control" formControlName="DsComplemento" [readonly]="readonly">
+    </div>
+  </div>
+</form>

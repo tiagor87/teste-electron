@@ -1,1 +1,1 @@
-export { Pessoa } from './pessoa.model';
+export { Fornecedor, FornecedorFiltro } from './fornecedor.model';

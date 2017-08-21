@@ -5,23 +5,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FornecedorRoutingModule } from './fornecedor-routing.module';
 import { FornecedorComponent } from './fornecedor.component';
 import { FornecedorSharedModule } from './shared/fornecedor-shared.module';
-import { FornecedorListaComponent } from './fornecedor-lista/fornecedor-lista.component';
-import { FornecedorListaItemComponent } from './fornecedor-lista-item/fornecedor-lista-item.component';
+import { EnderecoModule } from '../endereco/endereco.module';
 import { FornecedorCadastroComponent } from './fornecedor-cadastro/fornecedor-cadastro.component';
+import { SharedModule } from '../shared/shared.module';
+import { FornecedorService } from './shared/fornecedor.service';
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
     CommonModule,
     FornecedorSharedModule,
-    FornecedorRoutingModule
+    FornecedorRoutingModule,
+    EnderecoModule,
+    SharedModule
   ],
-  declarations: [
-    FornecedorComponent,
-    FornecedorListaComponent,
-    FornecedorListaItemComponent,
-    FornecedorCadastroComponent
-  ],
-  providers: []
+  declarations: [FornecedorCadastroComponent, FornecedorComponent],
+  exports: [FornecedorComponent],
+  providers: [FornecedorService]
 })
 export class FornecedorModule {}

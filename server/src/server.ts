@@ -1,9 +1,13 @@
 import * as express from 'express';
-import * as path from 'path';
-import { PessoaProvider } from './provider';
-import { pessoaRouter } from './routes';
+import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
+import { FornecedorController } from './controllers';
+
 export const server = express();
 
-server.use('/api/pessoas', pessoaRouter);
+server.use(cors());
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded());
+FornecedorController.configurar('/api/fornecedor', server);
 
-server.all('*', express.static(__dirname));
+server.listen(3000);
