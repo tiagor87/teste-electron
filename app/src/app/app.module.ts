@@ -7,9 +7,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule, FornecedorModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent]
