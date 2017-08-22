@@ -57,13 +57,13 @@
           </thead>
           <tbody *ngIf="!!fornecedores?.length; else fornecedorEmptyRow">
             <tr *ngFor="let f of fornecedores; let i = index" (click)="selecionar(f)" data-dismiss="modal">
-              <td nowrap>{{i + 1}}</td>
-              <td nowrap>{{f.CdChamada}}</td>
-              <td nowrap>{{f.NmPessoa}}</td>
-              <td nowrap>{{f.NmLogradouro}}</td>
-              <td nowrap>{{f.IdUF}}</td>
-              <td nowrap>{{f.NmCidade}}</td>
-              <td nowrap>{{f.NmBairro}}</td>
+              <td>{{i + 1}}</td>
+              <td>{{f.CdChamada}}</td>
+              <td>{{f.NmPessoa}}</td>
+              <td>{{f.NmLogradouro}}</td>
+              <td>{{f.IdUF}}</td>
+              <td>{{f.NmCidade}}</td>
+              <td>{{f.NmBairro}}</td>
             </tr>
           </tbody>
           <ng-template #fornecedorEmptyRow>

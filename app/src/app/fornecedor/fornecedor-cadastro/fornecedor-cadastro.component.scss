@@ -2,3 +2,7 @@
   width: 100%;
   overflow: auto;
 }
+
+.table-container table tbody tr td {
+  white-space: nowrap;
+}

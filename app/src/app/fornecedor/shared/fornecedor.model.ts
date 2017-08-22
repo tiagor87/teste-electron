@@ -1,5 +1,27 @@
 import { Endereco } from '../../endereco/shared/endereco.model';
 
+export interface IFornecedorDTO {
+  IdPessoa: string;
+  CdChamada: string;
+  CdCPF_CGC: string;
+  NmCurto: string;
+  NmPessoa: string;
+  TpPessoa: string;
+  NrTelefone: string;
+  TpFornecedor: string;
+  CdEndereco: string;
+  CdCEP: string;
+  TpLogradouro: string;
+  NmLogradouro: string;
+  NrLogradouro: string;
+  DsComplemento: string;
+  IdBairro: string;
+  NmBairro: string;
+  IdCidade: string;
+  NmCidade: string;
+  IdUF: string;
+}
+
 export class Fornecedor {
   public IdPessoa: string;
   public CdChamada: string;

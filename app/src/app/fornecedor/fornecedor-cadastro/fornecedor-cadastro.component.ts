@@ -1,4 +1,4 @@
-import { Fornecedor } from './../shared/fornecedor.model';
+import { Fornecedor, IFornecedorDTO } from './../shared/fornecedor.model';
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';
@@ -14,7 +14,7 @@ import { ModalButtonComponent } from '../../shared/modal/modal-button/modal-butt
 export class FornecedorCadastroComponent implements OnInit {
   @ViewChild('codigo') public codigoElement: ElementRef;
   @ViewChild(ModalButtonComponent) public localizarButton: ModalButtonComponent;
-  public fornecedores: Fornecedor[];
+  public fornecedores: IFornecedorDTO[];
   public endereco: Endereco;
   public cadastroForm: FormGroup;
   public filtroForm: FormGroup;

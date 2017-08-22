@@ -1,6 +1,6 @@
 import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
-import { Fornecedor } from './fornecedor.model';
+import { Fornecedor, IFornecedorDTO } from './fornecedor.model';
 import { Http, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
