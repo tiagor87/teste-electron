@@ -8,6 +8,7 @@
   min-width: 40px;
   width: 10%;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2), 0 0 5px 5px rgba(0, 0, 0, .1);
+  max-width: 320px;
 
   transition: width 1s ease, background-color 1s ease-out;
 
@@ -46,6 +47,7 @@
 .sidebar:hover {
   background-color: rgba(0, 0, 0, .9);
   width: 90%;
+
   @media (min-width: 768px) {
     width: 320px;
   }
