@@ -1,13 +1,14 @@
 .sidebar {
   position: fixed;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, .7);
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 4;
   min-width: 40px;
   width: 10%;
-  transition: width 1s ease;
+  transition: width 1s ease, background-color 1s ease-out;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2), 0 0 10px 10px rgba(0, 0, 0, .1);
   @media (min-width: 768px) {
     width: 20%;
   }
@@ -34,14 +35,15 @@
       }
     }
 
+    .list-item.active,
     .list-item:hover {
-      background-color: rgba(255, 255, 255, .1);
+      background-color: rgba(255, 255, 255, .2);
     }
   }
 }
 .sidebar:hover {
+  background-color: rgba(0, 0, 0, .9);
   width: 60%;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 10px rgba(0, 0, 0, 0.1);
   @media (min-width: 768px) {
     width: 20%;
   }
