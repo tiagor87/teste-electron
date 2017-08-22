@@ -1,0 +1,19 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ./src/main.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "electron": "^1.7.5",
+    "express": "^4.15.4",
+    "mssql": "^4.0.4"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.6.10"
+  }
+}

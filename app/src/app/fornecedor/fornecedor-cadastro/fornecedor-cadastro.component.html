@@ -1,7 +1,7 @@
 <div class="col-md-12">
   <form [formGroup]="cadastroForm">
     <div class="row">
-      <div class="form-group col-md-2">
+      <div class="form-group col-md-3">
         <label for="codigo-pessoa">Código</label>
         <div class="input-group">
           <input #codigo type="text" class="form-control" formControlName="CdChamada" maxlength="6" (blur)="buscarPorCodigoDeChamada(codigo.value)"
@@ -9,11 +9,11 @@
           <alt-modal-button class="input-group-btn" target="#modal-consulta-fornecedor"><span class="glyphicon glyphicon-search"></span></alt-modal-button>
         </div>
       </div>
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-4">
         <label for="nome-pessoa">Nome</label>
         <input type="text" class="form-control" formControlName="NmPessoa" readonly>
       </div>
-      <div class="form-group col-md-2">
+      <div class="form-group col-md-3">
         <label for="cpf-cnpj-pessoa">CPF / CNPJ</label>
         <input type="text" class="form-control" formControlName="CdCPF_CGC" readonly>
       </div>

@@ -6,7 +6,8 @@ import {
   EventEmitter,
   Output
 } from '@angular/core';
-import 'jquery';
+
+import * as jQuery from 'jquery';
 
 @Directive({
   selector: '[altModalEvents]'

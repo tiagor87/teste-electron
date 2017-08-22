@@ -1,8 +1,12 @@
 .table-container {
   width: 100%;
   overflow: auto;
-}
 
-.table-container table tbody tr td {
-  white-space: nowrap;
+  table tbody tr {
+    cursor: pointer;
+
+    td {
+      white-space: nowrap;
+    }
+  }
 }

@@ -9,5 +9,3 @@ server.use(cors());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded());
 FornecedorController.configurar('/api/fornecedor', server);
-
-server.listen(3000);

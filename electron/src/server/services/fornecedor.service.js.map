@@ -1,0 +1,1 @@
+{"version":3,"file":"fornecedor.service.js","sourceRoot":"c:/projetos/electron/teste-electron/server/src/","sources":["services/fornecedor.service.ts"],"names":[],"mappings":";;AAEA;IACE,YAAoB,QAA4B;QAA5B,aAAQ,GAAR,QAAQ,CAAoB;IAAG,CAAC;IAE7C,UAAU;QACf,MAAM,CAAC,IAAI,CAAC,QAAQ,CAAC,MAAM,EAAE,CAAC;IAChC,CAAC;CACF;AAND,8CAMC"}

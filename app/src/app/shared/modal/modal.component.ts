@@ -2,15 +2,9 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  AfterViewChecked,
   Input,
-  HostBinding,
   EventEmitter,
-  Output,
-  ViewChild,
-  ElementRef,
-  Renderer,
-  Renderer2
+  Output
 } from '@angular/core';
 
 @Component({

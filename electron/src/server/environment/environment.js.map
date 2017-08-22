@@ -1,0 +1,1 @@
+{"version":3,"file":"environment.js","sourceRoot":"c:/projetos/electron/teste-electron/server/src/","sources":["environment/environment.ts"],"names":[],"mappings":";;AAAa,QAAA,cAAc,GAAG;IAC5B,QAAQ,EAAE,SAAS;IACnB,IAAI,EAAE,IAAI;IACV,QAAQ,EAAE,QAAQ;IAClB,MAAM,EAAE,WAAW;IACnB,OAAO,EAAE;QACP,YAAY,EAAE,YAAY;KAC3B;CACF,CAAC"}
