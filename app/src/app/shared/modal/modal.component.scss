@@ -1,0 +1,28 @@
+.modal {
+  transition: background-color 1s ease, padding-left .4s ease,
+    padding-right .4s ease, opacity .4s ease;
+  .modal-dialog {
+    transition: margin .4s ease, transform .4s ease;
+    .modal-content {
+      transition: border-radius 1s ease, box-shadow 1s ease, border 1s ease;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    background-color: #fff;
+    padding-left: 50px;
+    padding-right: 0 !important;
+
+    .modal-dialog {
+      margin: 0;
+
+      .modal-content {
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
+}

@@ -1,11 +1,9 @@
 <div [id]="modalId" class="modal fade" altModalEvents (exibido)="exibido.emit()" (escondido)="escondido.emit()">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <ng-content select="alt-modal-header"></ng-content>
-        <ng-content select="alt-modal-body"></ng-content>
-        <ng-content select="alt-modal-footer"></ng-content>
-      </div>
+      <ng-content select="alt-modal-header"></ng-content>
+      <ng-content select="alt-modal-body"></ng-content>
+      <ng-content select="alt-modal-footer"></ng-content>
     </div>
   </div>
 </div>
