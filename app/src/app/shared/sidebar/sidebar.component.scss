@@ -5,15 +5,14 @@
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 4;
-  min-width: 40px;
-  width: 10%;
+  width: 40px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2), 0 0 5px 5px rgba(0, 0, 0, .1);
-  max-width: 320px;
 
-  transition: width 1s ease, background-color 1s ease-out;
+  transition: width 1s cubic-bezier(.5, 0, .5, 1.2),
+    background-color 1s ease-out;
 
   @media (min-width: 768px) {
-    width: 320px;
+    width: 250px;
   }
 
   .list {
@@ -31,9 +30,11 @@
       cursor: pointer;
 
       .list-item-text {
-        display: none;
+        width: 0;
+        opacity: 0;
+        transition: opacity .4s ease;
         @media (min-width: 768px) {
-          display: inline-block;
+          width: auto;
         }
       }
     }
@@ -46,13 +47,14 @@
 }
 .sidebar:hover {
   background-color: rgba(0, 0, 0, .9);
-  width: 90%;
+  width: 250px;
 
   @media (min-width: 768px) {
-    width: 320px;
+    width: 250px;
   }
 
   .list .list-item .list-item-text {
-    display: inline-block;
+    width: auto;
+    opacity: 1;
   }
 }

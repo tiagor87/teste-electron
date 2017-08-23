@@ -7,8 +7,6 @@ import {
   Output
 } from '@angular/core';
 
-import * as jQuery from 'jquery';
-
 @Directive({
   selector: '[altModalEvents]'
 })
@@ -18,13 +16,13 @@ export class ModalEventsDirective implements OnInit, OnDestroy {
   constructor(private element: ElementRef) {}
 
   ngOnDestroy() {
-    const modal = jQuery(this.element.nativeElement);
+    const modal = $(this.element.nativeElement);
     modal.off('shown.bs.modal');
     modal.off('hidden.bs.modal');
   }
 
   ngOnInit() {
-    const modal = jQuery(this.element.nativeElement);
+    const modal = $(this.element.nativeElement);
     modal.on('shown.bs.modal', () => this.exibido.emit());
     modal.on('hidden.bs.modal', () => this.escondido.emit());
   }

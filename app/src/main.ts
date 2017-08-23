@@ -8,6 +8,4 @@ import * as jQuery from 'jquery';
 if (environment.production) {
   enableProdMode();
 }
-
-window['$'] = window['jQuery'] = jQuery;
-jQuery(() => platformBrowserDynamic().bootstrapModule(AppModule));
+$(() => platformBrowserDynamic().bootstrapModule(AppModule));

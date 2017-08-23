@@ -1,8 +1,8 @@
 .content {
   width: 100%;
-  padding-left: calc(10% + 20px);
+  padding-left: 60px;
   transition: padding-left 1s ease;
   @media (min-width: 768px) {
-    padding-left: 340px;
+    padding-left: 270px;
   }
 }
