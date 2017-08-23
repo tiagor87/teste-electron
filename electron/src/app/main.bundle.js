@@ -1,6 +1,6 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src lazy recursive":
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -9,7 +9,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
@@ -914,7 +914,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".content {\n  width: 100%;\n  padding-left: calc(10% + 20px);\n  transition: padding-left 1s ease; }\n  @media (min-width: 768px) {\n    .content {\n      padding-left: calc(20% + 20px); } }\n", ""]);
+exports.push([module.i, ".content {\n  width: 100%;\n  padding-left: calc(10% + 20px);\n  transition: padding-left 1s ease; }\n  @media (min-width: 768px) {\n    .content {\n      padding-left: 340px; } }\n", ""]);
 
 // exports
 
@@ -1481,7 +1481,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".sidebar {\n  position: fixed;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.7);\n  overflow-y: auto;\n  overflow-x: hidden;\n  z-index: 4;\n  min-width: 40px;\n  width: 10%;\n  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2), 0 0 5px 5px rgba(0, 0, 0, 0.1);\n  transition: width 1s ease, background-color 1s ease-out; }\n  @media (min-width: 768px) {\n    .sidebar {\n      width: 20%; } }\n  .sidebar .list {\n    list-style: none;\n    width: 100%;\n    padding: 0 2px; }\n    .sidebar .list .list-item {\n      width: 100%;\n      text-align: center;\n      color: #ffffff;\n      padding: 10px;\n      transition: background-color .4s ease;\n      white-space: nowrap;\n      cursor: pointer; }\n      .sidebar .list .list-item .list-item-text {\n        display: none; }\n        @media (min-width: 768px) {\n          .sidebar .list .list-item .list-item-text {\n            display: inline-block; } }\n    .sidebar .list .list-item.active,\n    .sidebar .list .list-item:hover {\n      background-color: rgba(255, 255, 255, 0.2); }\n\n.sidebar:hover {\n  background-color: rgba(0, 0, 0, 0.9);\n  width: 60%; }\n  @media (min-width: 768px) {\n    .sidebar:hover {\n      width: 20%; } }\n  .sidebar:hover .list .list-item .list-item-text {\n    display: inline-block; }\n", ""]);
+exports.push([module.i, ".sidebar {\n  position: fixed;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.7);\n  overflow-y: auto;\n  overflow-x: hidden;\n  z-index: 4;\n  min-width: 40px;\n  width: 10%;\n  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2), 0 0 5px 5px rgba(0, 0, 0, 0.1);\n  max-width: 320px;\n  transition: width 1s ease, background-color 1s ease-out; }\n  @media (min-width: 768px) {\n    .sidebar {\n      width: 320px; } }\n  .sidebar .list {\n    list-style: none;\n    width: 100%;\n    padding: 0 2px; }\n    .sidebar .list .list-item {\n      width: 100%;\n      text-align: center;\n      color: #ffffff;\n      padding: 10px;\n      transition: background-color .4s ease;\n      white-space: nowrap;\n      cursor: pointer; }\n      .sidebar .list .list-item .list-item-text {\n        display: none; }\n        @media (min-width: 768px) {\n          .sidebar .list .list-item .list-item-text {\n            display: inline-block; } }\n    .sidebar .list .list-item.active,\n    .sidebar .list .list-item:hover {\n      background-color: rgba(255, 255, 255, 0.2); }\n\n.sidebar:hover {\n  background-color: rgba(0, 0, 0, 0.9);\n  width: 90%; }\n  @media (min-width: 768px) {\n    .sidebar:hover {\n      width: 320px; } }\n  .sidebar:hover .list .list-item .list-item-text {\n    display: inline-block; }\n", ""]);
 
 // exports
 
@@ -1563,6 +1563,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* enableProdMode */])();
 }
+window['$'] = window['jQuery'] = __WEBPACK_IMPORTED_MODULE_4_jquery__;
 __WEBPACK_IMPORTED_MODULE_4_jquery__(() => Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]));
 //# sourceMappingURL=main.js.map
 

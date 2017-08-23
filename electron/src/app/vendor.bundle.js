@@ -15655,7 +15655,7 @@ module.exports = g;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 
 /**
- * @license Angular v4.3.4
+ * @license Angular v4.3.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -19598,7 +19598,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version */]('4.3.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version */]('4.3.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -19867,7 +19867,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version *
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 
 /**
- * @license Angular v4.3.4
+ * @license Angular v4.3.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -19887,7 +19887,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version *
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version */]('4.3.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version */]('4.3.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -47714,7 +47714,7 @@ function _mergeArrays(parts) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__);
 
 /**
- * @license Angular v4.3.4
+ * @license Angular v4.3.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -48510,7 +48510,7 @@ var Version = (function () {
 /**
  * \@stable
  */
-var VERSION = new Version('4.3.4');
+var VERSION = new Version('4.3.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -53357,7 +53357,7 @@ var SystemJsNgModuleLoader = (function () {
         if (exportName === undefined) {
             exportName = 'default';
         }
-        return __webpack_require__("../../../../../src lazy recursive")(module)
+        return __webpack_require__("../../../../../src/$$_gendir lazy recursive")(module)
             .then(function (module) { return module[exportName]; })
             .then(function (type) { return checkNotEmpty(type, module, exportName); })
             .then(function (type) { return _this._compiler.compileModuleAsync(type); });
@@ -53373,7 +53373,7 @@ var SystemJsNgModuleLoader = (function () {
             exportName = 'default';
             factoryClassSuffix = '';
         }
-        return __webpack_require__("../../../../../src lazy recursive")(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
+        return __webpack_require__("../../../../../src/$$_gendir lazy recursive")(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
             .then(function (module) { return module[exportName + factoryClassSuffix]; })
             .then(function (factory) { return checkNotEmpty(factory, module, exportName); });
     };
@@ -53615,7 +53615,7 @@ var ChangeDetectorRef = (function () {
      *
      *   constructor(private ref: ChangeDetectorRef) {
      *     setInterval(() => {
-     *       this.numberOfTicks ++
+     *       this.numberOfTicks++;
      *       // the following is required, otherwise the view will not be updated
      *       this.ref.markForCheck();
      *     }, 1000);
@@ -53666,11 +53666,11 @@ var ChangeDetectorRef = (function () {
      * \@Component({
      *   selector: 'giant-list',
      *   template: `
-     *     <li *ngFor="let d of dataProvider.data">Data {{d}}</lig>
+     *     <li *ngFor="let d of dataProvider.data">Data {{d}}</li>
      *   `,
      * })
      * class GiantList {
-     *   constructor(private ref: ChangeDetectorRef, private dataProvider:DataProvider) {
+     *   constructor(private ref: ChangeDetectorRef, private dataProvider: DataProvider) {
      *     ref.detach();
      *     setInterval(() => {
      *       this.ref.detectChanges();
@@ -53757,13 +53757,14 @@ var ChangeDetectorRef = (function () {
      *   template: 'Data: {{dataProvider.data}}'
      * })
      * class LiveData {
-     *   constructor(private ref: ChangeDetectorRef, private dataProvider:DataProvider) {}
+     *   constructor(private ref: ChangeDetectorRef, private dataProvider: DataProvider) {}
      *
      *   set live(value) {
-     *     if (value)
+     *     if (value) {
      *       this.ref.reattach();
-     *     else
+     *     } else {
      *       this.ref.detach();
+     *     }
      *   }
      * }
      *
@@ -57781,6 +57782,9 @@ var ViewContainerRef_ = (function () {
      * @return {?}
      */
     ViewContainerRef_.prototype.insert = function (viewRef, index) {
+        if (viewRef.destroyed) {
+            throw new Error('Cannot insert a destroyed View in a ViewContainer!');
+        }
         var /** @type {?} */ viewRef_ = (viewRef);
         var /** @type {?} */ viewData = viewRef_._view;
         attachEmbeddedView(this._view, this._data, index, viewData);
@@ -57793,6 +57797,9 @@ var ViewContainerRef_ = (function () {
      * @return {?}
      */
     ViewContainerRef_.prototype.move = function (viewRef, currentIndex) {
+        if (viewRef.destroyed) {
+            throw new Error('Cannot move a destroyed View in a ViewContainer!');
+        }
         var /** @type {?} */ previousIndex = this._embeddedViews.indexOf(viewRef._view);
         moveEmbeddedView(this._data, previousIndex, currentIndex);
         return viewRef;
@@ -62596,7 +62603,7 @@ function transition$$1(stateChangeExpr, steps) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 
 /**
- * @license Angular v4.3.4
+ * @license Angular v4.3.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -62624,12 +62631,16 @@ var AbstractControlDirective = (function () {
     function AbstractControlDirective() {
     }
     /**
+     * The {\@link FormControl}, {\@link FormGroup}, or {\@link FormArray}
+     * that backs this directive. Most properties fall through to that
+     * instance.
      * @abstract
      * @return {?}
      */
     AbstractControlDirective.prototype.control = function () { };
     Object.defineProperty(AbstractControlDirective.prototype, "value", {
         /**
+         * The value of the control.
          * @return {?}
          */
         get: function () { return this.control ? this.control.value : null; },
@@ -62638,6 +62649,10 @@ var AbstractControlDirective = (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "valid", {
         /**
+         * A control is `valid` when its `status === VALID`.
+         *
+         * In order to have this status, the control must have passed all its
+         * validation checks.
          * @return {?}
          */
         get: function () { return this.control ? this.control.valid : null; },
@@ -62646,6 +62661,10 @@ var AbstractControlDirective = (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "invalid", {
         /**
+         * A control is `invalid` when its `status === INVALID`.
+         *
+         * In order to have this status, the control must have failed
+         * at least one of its validation checks.
          * @return {?}
          */
         get: function () { return this.control ? this.control.invalid : null; },
@@ -62654,54 +62673,23 @@ var AbstractControlDirective = (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "pending", {
         /**
+         * A control is `pending` when its `status === PENDING`.
+         *
+         * In order to have this status, the control must be in the
+         * middle of conducting a validation check.
          * @return {?}
          */
         get: function () { return this.control ? this.control.pending : null; },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(AbstractControlDirective.prototype, "errors", {
-        /**
-         * @return {?}
-         */
-        get: function () { return this.control ? this.control.errors : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "pristine", {
-        /**
-         * @return {?}
-         */
-        get: function () { return this.control ? this.control.pristine : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "dirty", {
-        /**
-         * @return {?}
-         */
-        get: function () { return this.control ? this.control.dirty : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "touched", {
-        /**
-         * @return {?}
-         */
-        get: function () { return this.control ? this.control.touched : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AbstractControlDirective.prototype, "untouched", {
-        /**
-         * @return {?}
-         */
-        get: function () { return this.control ? this.control.untouched : null; },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(AbstractControlDirective.prototype, "disabled", {
         /**
+         * A control is `disabled` when its `status === DISABLED`.
+         *
+         * Disabled controls are exempt from validation checks and
+         * are not included in the aggregate value of their ancestor
+         * controls.
          * @return {?}
          */
         get: function () { return this.control ? this.control.disabled : null; },
@@ -62710,14 +62698,76 @@ var AbstractControlDirective = (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "enabled", {
         /**
+         * A control is `enabled` as long as its `status !== DISABLED`.
+         *
+         * In other words, it has a status of `VALID`, `INVALID`, or
+         * `PENDING`.
          * @return {?}
          */
         get: function () { return this.control ? this.control.enabled : null; },
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(AbstractControlDirective.prototype, "errors", {
+        /**
+         * Returns any errors generated by failing validation. If there
+         * are no errors, it will return null.
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.errors : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "pristine", {
+        /**
+         * A control is `pristine` if the user has not yet changed
+         * the value in the UI.
+         *
+         * Note that programmatic changes to a control's value will
+         * *not* mark it dirty.
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.pristine : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "dirty", {
+        /**
+         * A control is `dirty` if the user has changed the value
+         * in the UI.
+         *
+         * Note that programmatic changes to a control's value will
+         * *not* mark it dirty.
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.dirty : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "touched", {
+        /**
+         * A control is marked `touched` once the user has triggered
+         * a `blur` event on it.
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.touched : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "untouched", {
+        /**
+         * A control is `untouched` if the user has not yet triggered
+         * a `blur` event on it.
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.untouched : null; },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(AbstractControlDirective.prototype, "statusChanges", {
         /**
+         * Emits an event every time the validation status of the control
+         * is re-calculated.
          * @return {?}
          */
         get: function () {
@@ -62728,6 +62778,8 @@ var AbstractControlDirective = (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "valueChanges", {
         /**
+         * Emits an event every time the value of the control changes, in
+         * the UI or programmatically.
          * @return {?}
          */
         get: function () {
@@ -62738,6 +62790,9 @@ var AbstractControlDirective = (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "path", {
         /**
+         * Returns an array that represents the path from the top-level form
+         * to this control. Each index is the string name of the control on
+         * that level.
          * @return {?}
          */
         get: function () { return null; },
@@ -62745,6 +62800,13 @@ var AbstractControlDirective = (function () {
         configurable: true
     });
     /**
+     * Resets the form control. This means by default:
+     *
+     * * it is marked as `pristine`
+     * * it is marked as `untouched`
+     * * value is set to null
+     *
+     * For more information, see {\@link AbstractControl}.
      * @param {?=} value
      * @return {?}
      */
@@ -62754,6 +62816,10 @@ var AbstractControlDirective = (function () {
             this.control.reset(value);
     };
     /**
+     * Returns true if the control with the given path has the error specified. Otherwise
+     * returns false.
+     *
+     * If no path is given, it checks for the error on the present control.
      * @param {?} errorCode
      * @param {?=} path
      * @return {?}
@@ -62762,6 +62828,10 @@ var AbstractControlDirective = (function () {
         return this.control ? this.control.hasError(errorCode, path) : false;
     };
     /**
+     * Returns error data if the control with the given path has the error specified. Otherwise
+     * returns null or undefined.
+     *
+     * If no path is given, it checks for the error on the present control.
      * @param {?} errorCode
      * @param {?=} path
      * @return {?}
@@ -63880,8 +63950,8 @@ var SelectControlValueAccessor = (function () {
     SelectControlValueAccessor.prototype.registerOnChange = function (fn) {
         var _this = this;
         this.onChange = function (valueString) {
-            _this.value = valueString;
-            fn(_this._getOptionValue(valueString));
+            _this.value = _this._getOptionValue(valueString);
+            fn(_this.value);
         };
     };
     /**
@@ -65321,7 +65391,7 @@ var AbstractControl = (function () {
      */
     AbstractControl.prototype.get = function (path) { return _find(this, path, '.'); };
     /**
-     * Returns true if the control with the given path has the error specified. Otherwise
+     * Returns error data if the control with the given path has the error specified. Otherwise
      * returns null or undefined.
      *
      * If no path is given, it checks for the error on the present control.
@@ -68457,7 +68527,7 @@ FormBuilder.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version */]('4.3.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version */]('4.3.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -68670,7 +68740,7 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 
 /**
- * @license Angular v4.3.4
+ * @license Angular v4.3.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -70825,7 +70895,7 @@ JsonpModule.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version */]('4.3.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version */]('4.3.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -70871,7 +70941,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* Version *
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 
 /**
- * @license Angular v4.3.4
+ * @license Angular v4.3.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -71004,7 +71074,7 @@ var CachedResourceLoader = (function (_super) {
 /**
  * @stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version */]('4.3.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version */]('4.3.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -71092,7 +71162,7 @@ var platformBrowserDynamic = Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__[
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 
 /**
- * @license Angular v4.3.4
+ * @license Angular v4.3.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -75499,7 +75569,7 @@ var By = (function () {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version */]('4.3.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version */]('4.3.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -75630,7 +75700,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version *
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_rxjs_operator_filter__);
 
 /**
- * @license Angular v4.3.4
+ * @license Angular v4.3.5
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -81883,7 +81953,7 @@ function provideRouterInitializer() {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version */]('4.3.4');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version */]('4.3.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.

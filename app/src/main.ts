@@ -9,4 +9,5 @@ if (environment.production) {
   enableProdMode();
 }
 
+window['$'] = window['jQuery'] = jQuery;
 jQuery(() => platformBrowserDynamic().bootstrapModule(AppModule));
